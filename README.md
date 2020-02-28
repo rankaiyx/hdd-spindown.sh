@@ -1,5 +1,7 @@
 # hdd-spindown.sh
 
+[README](README.md) | [中文文档](README_zh.md)
+
 Automatic Disk Standby using Kernel diskstats and hdparm
 
 
