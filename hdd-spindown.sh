@@ -36,7 +36,9 @@ function selftest_active() {
 }
 
 function dev_stats() {
-	read R_IO R_M R_S R_T W_IO REST < "/sys/block/$1/stat"
+	#read R_IO R_M R_S R_T W_IO REST < "/sys/block/$1/stat"
+        R_IO=$(cat /proc/diskstats | grep ${1}1 | awk '{print $4}')
+        W_IO=$(cat /proc/diskstats | grep ${1}1 | awk '{print $8}')
 	echo "$R_IO $W_IO"
 }
 
